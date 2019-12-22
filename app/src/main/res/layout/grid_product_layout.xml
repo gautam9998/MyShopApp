@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="ViewAll"
+        android:text="View All"
         android:textSize="12sp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@android:color/white"

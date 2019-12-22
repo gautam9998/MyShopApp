@@ -14,8 +14,7 @@
         android:id="@+id/horizontal_scroll_layout_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginStart="5dp"
         android:text="Deal Of The Day"
         android:textColor="@android:color/black"
         android:textSize="16sp"
@@ -23,8 +22,10 @@
         app:layout_constraintBottom_toBottomOf="@+id/horizontal_scroll_viewall_button"
 
         app:layout_constraintEnd_toStartOf="@+id/horizontal_scroll_viewall_button"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457" />
 
     <Button
         android:id="@+id/horizontal_scroll_viewall_button"

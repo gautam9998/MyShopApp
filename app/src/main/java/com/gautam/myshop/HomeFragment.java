@@ -268,7 +268,8 @@ horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawa
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.my_wishlist,"Iphone 11 ","Triple camera","Rs 100000"));
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
-
+        horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.my_wishlist,"Iphone 11 ","Triple camera","Rs 100000"));
+        horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
 
 
         horizontal_product_scroll_adapter horizontal_product_scroll_adapter=new horizontal_product_scroll_adapter(horizontalProductScrollModelList);
@@ -319,15 +320,16 @@ horizontal_product_scroll_adapter.notifyDataSetChanged();
 
         List<HomePageModel> homePageModelList=new ArrayList<>();
 
+
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
         homePageModelList.add(new HomePageModel(1,R.drawable.banner,"#ff0000"));
-        homePageModelList.add(new HomePageModel(1,R.drawable.app_icon,"#000000"));
-        homePageModelList.add(new HomePageModel(0,sliderModelList));
+        //homePageModelList.add(new HomePageModel(1,R.drawable.app_icon,"#000000"));
 
+        homePageModelList.add(new HomePageModel(2,"  DEALS OF THE DAY",horizontalProductScrollModelList));
+        homePageModelList.add(new HomePageModel(3,"DEALS OF THE DAY",horizontalProductScrollModelList));
 
-        homePageModelList.add(new HomePageModel(0,sliderModelList));
-
-        homePageModelList.add(new HomePageModel(0,sliderModelList));
-        homePageModelList.add(new HomePageModel(1,R.drawable.shopping,"#ffff00"));
+       // homePageModelList.add(new HomePageModel(0,sliderModelList));
+       // homePageModelList.add(new HomePageModel(1,R.drawable.shopping,"#ffff00"));
 
         HomePageAdapter adapter=new HomePageAdapter(homePageModelList);
 
