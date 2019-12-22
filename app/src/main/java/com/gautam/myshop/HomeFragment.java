@@ -48,7 +48,7 @@ private RecyclerView categoryRecyclerView;
     private  int currentpage=2;
     private Timer timer;
     final private long DELAY_TIME=2000;
-    final private long PERIODD_TIME=3000;
+    final private long PERIODD_TIME=2000;
 
     ////////
 
@@ -302,6 +302,41 @@ horizontal_product_scroll_adapter.notifyDataSetChanged();
 
         //////////////////**
 
+
+
+
+
+
+
+
+
+        ///////////////test
+
+        RecyclerView testing=view.findViewById(R.id.testing);
+        LinearLayoutManager testLayoutManager=new LinearLayoutManager(getContext());
+        testLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        testing.setLayoutManager(testLayoutManager);
+
+        List<HomePageModel> homePageModelList=new ArrayList<>();
+
+        homePageModelList.add(new HomePageModel(1,R.drawable.banner,"#ff0000"));
+        homePageModelList.add(new HomePageModel(1,R.drawable.app_icon,"#000000"));
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
+
+
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
+
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
+        homePageModelList.add(new HomePageModel(1,R.drawable.shopping,"#ffff00"));
+
+        HomePageAdapter adapter=new HomePageAdapter(homePageModelList);
+
+
+testing.setAdapter(adapter);
+adapter.notifyDataSetChanged();
+
+
+        ////////////test
 
         return view;
     }

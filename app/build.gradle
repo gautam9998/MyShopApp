@@ -44,4 +44,10 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'io.paperdb:paperdb:2.6'
 
+
+
+
+    //implementation 'com.google.firebase:firebase-ads:18.3.0'
+
+
 }

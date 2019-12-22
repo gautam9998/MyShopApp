@@ -3,6 +3,7 @@ package com.gautam.myshop;
 import android.content.Intent;
 import android.os.Bundle;
 
+//import com.google.android.gms.ads.AdView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -53,6 +54,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(HomeActivity.this);
         //navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
         navigationView.getMenu().getItem(0).setChecked(true);
+
+
+       // AdView adView=new AdView(this);
 
 
         // Passing each menu ID as a set of Ids because each
