@@ -259,6 +259,7 @@ horizontalLayoutTitle=view.findViewById(R.id.horizontal_scroll_layout_title);
 horizontalViewAll=view.findViewById(R.id.horizontal_scroll_viewall_button);
 horizontalRecyclerView=view.findViewById(R.id.horizontal_scroll_layout_recyclerview);
 
+
 List<horizontal_product_scroll_model> horizontalProductScrollModelList=new ArrayList<>();
 horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
