@@ -1,0 +1,16 @@
+Index: app/src/main/java/com/gautam/myshop/LoginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/gautam/myshop/LoginActivity.java	(date 1576818420000)
++++ app/src/main/java/com/gautam/myshop/LoginActivity.java	(date 1576818420000)
+@@ -114,7 +114,7 @@
+         }
+ 
+ 
+-        Toast.makeText(LoginActivity.this, "000000000", Toast.LENGTH_SHORT).show();
++        //Toast.makeText(LoginActivity.this, "000000000", Toast.LENGTH_SHORT).show();
+ 
+         final DatabaseReference RootRef;
+         RootRef= FirebaseDatabase.getInstance().getReference();

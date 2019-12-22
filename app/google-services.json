@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "911321959727",
+    "firebase_url": "https://myshop-866cb.firebaseio.com",
+    "project_id": "myshop-866cb",
+    "storage_bucket": "myshop-866cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911321959727:android:5b9ee4204ac7a1cb36e5da",
+        "android_client_info": {
+          "package_name": "com.gautam.myshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911321959727-noai3mvb5i45o4n8asicjbs8juatvb10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gautam.myshop",
+            "certificate_hash": "1ebcd6fd2a0b6f9a032b9c8de3979e27dd2edd56"
+          }
+        },
+        {
+          "client_id": "911321959727-q12735t57uku1vd0t72haqm038ql4f92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUzef5t8US6MOAlQ5XEV9CLWKEc9bpOYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911321959727-q12735t57uku1vd0t72haqm038ql4f92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
