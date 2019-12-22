@@ -1,77 +1,31 @@
 package com.gautam.myshop;
 
-
-import android.graphics.Color;
-import android.os.Bundle;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
+public class CategoryActivity extends AppCompatActivity {
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class HomeFragment extends Fragment {
-
-   private RecyclerView testing;
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-private RecyclerView categoryRecyclerView;
-    private Category_adapter category_adapter;
-
-
-
-
-
-
-
-
-
+    private RecyclerView categoryRecyclerView;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_home2, container, false);
-        categoryRecyclerView=view.findViewById(R.id.category_recyclerview);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        categoryRecyclerView.setLayoutManager(linearLayoutManager);
-        List<Category_model> category_modelList=new ArrayList<Category_model>();
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Electronics"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Electronics"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Electronics"));
-        category_modelList.add(new Category_model("link","Home"));
-        category_modelList.add(new Category_model("link","Home"));
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_category);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        String title = getIntent().getStringExtra("CategoryName");
 
-        category_adapter=new Category_adapter(category_modelList);
-        categoryRecyclerView.setAdapter(category_adapter);
-        category_adapter.notifyDataSetChanged();
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        categoryRecyclerView = findViewById(R.id.category_recycler_view);
 
 
         ////////////////
@@ -83,7 +37,7 @@ private RecyclerView categoryRecyclerView;
 
 
 
-     List<slider_model>   sliderModelList =new ArrayList<slider_model>();
+       List<slider_model>   sliderModelList =new ArrayList<slider_model>();
 
 
 
@@ -160,8 +114,8 @@ private RecyclerView categoryRecyclerView;
 
 
 
-List<horizontal_product_scroll_model> horizontalProductScrollModelList=new ArrayList<>();
-horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
+        List<horizontal_product_scroll_model> horizontalProductScrollModelList=new ArrayList<>();
+        horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.shopping,"Iphone 11 ","Triple camera","Rs 100000"));
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.profile,"Iphone 11 ","Triple camera","Rs 100000"));
         horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawable.my_rewards,"Iphone 11 ","Triple camera","Rs 100000"));
@@ -203,10 +157,10 @@ horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawa
 
         ///////////////test
 
-        testing=view.findViewById(R.id.home_page_recycler_view);
-        LinearLayoutManager testLayoutManager=new LinearLayoutManager(getContext());
+
+        LinearLayoutManager testLayoutManager=new LinearLayoutManager(CategoryActivity.this);
         testLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        testing.setLayoutManager(testLayoutManager);
+       categoryRecyclerView.setLayoutManager(testLayoutManager);
 
         List<HomePageModel> homePageModelList=new ArrayList<>();
 
@@ -217,32 +171,43 @@ horizontalProductScrollModelList.add(new horizontal_product_scroll_model(R.drawa
 
         homePageModelList.add(new HomePageModel(2,"  DEALS OF THE DAY",horizontalProductScrollModelList));
         homePageModelList.add(new HomePageModel(3,"DEALS OF THE DAY",horizontalProductScrollModelList));
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
+        homePageModelList.add(new HomePageModel(0,sliderModelList));
 
-       // homePageModelList.add(new HomePageModel(0,sliderModelList));
-       // homePageModelList.add(new HomePageModel(1,R.drawable.shopping,"#ffff00"));
+        // homePageModelList.add(new HomePageModel(0,sliderModelList));
+        // homePageModelList.add(new HomePageModel(1,R.drawable.shopping,"#ffff00"));
 
         HomePageAdapter adapter=new HomePageAdapter(homePageModelList);
 
 
-testing.setAdapter(adapter);
-adapter.notifyDataSetChanged();
+        categoryRecyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
 
-        ////////////test
-
-        return view;
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.search_icon, menu);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id=item.getItemId();
+        if(id==R.id.main_search_icon)
+        {
+            return true;
+        }
+        else if (id==android.R.id.home)
+        {
+            finish();
+            return true;
+        }
 
-
-
-    ///////////////
-
-
-
-
-
-
-    /////////
-
+        return super.onOptionsItemSelected(item);
+    }
 }
+

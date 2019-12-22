@@ -1,5 +1,6 @@
 package com.gautam.myshop;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,7 @@ public class Category_adapter extends RecyclerView.Adapter<Category_adapter.View
     public void onBindViewHolder(@NonNull Category_adapter.ViewHolder holder, int position) {
         String icon=category_modelList.get(position).getCategory_icon_link();
         String name=category_modelList.get(position).getCategory_name();
-       holder.setCategoryName(name);
+       holder.setCategory(name,position);
 
 
     }
@@ -53,9 +54,20 @@ private ImageView categoryIcon;
         {
 
         }
-        private void setCategoryName(String name)
+        private void setCategory(final String name, final int position)
         {
             categoryName.setText(name);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(position!=0) {
+                        Intent intent = new Intent(itemView.getContext(), CategoryActivity.class);
+                        intent.putExtra("CategoryName", name);
+                        itemView.getContext().startActivity(intent);
+                    }
+
+                }
+            });
         }
 
     }
