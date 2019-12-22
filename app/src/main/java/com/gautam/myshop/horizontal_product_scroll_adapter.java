@@ -1,5 +1,6 @@
 package com.gautam.myshop;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,12 +61,19 @@ public class horizontal_product_scroll_adapter extends RecyclerView.Adapter<hori
         private TextView productTitle;
         private TextView productDescription;
         private TextView productPrice;
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             super(itemView);
             productImage=itemView.findViewById(R.id.hs_product_image);
             productTitle=itemView.findViewById(R.id.hs_product_title);
             productDescription=itemView.findViewById(R.id.hs_product_description);
             productPrice=itemView.findViewById(R.id.hs_product_price);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(itemView.getContext(),ProductDetailsActivity.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
 
 
