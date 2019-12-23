@@ -6,7 +6,9 @@
     android:elevation="3dp"
 
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp">
 
     <ImageView
         android:id="@+id/product_image"
@@ -51,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="Rs 59999"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/product_price"
         app:layout_constraintEnd_toStartOf="@+id/product_price" />
 
@@ -99,7 +102,7 @@
         android:backgroundTint="@android:color/black"
         android:padding="3dp"
         android:drawableEnd="@drawable/drop_down"
-        android:drawableTint="8dp"
+
         app:layout_constraintBottom_toBottomOf="@+id/coupons_applied"
         app:layout_constraintStart_toEndOf="@+id/product_image"
         app:layout_constraintTop_toBottomOf="@+id/cutted_price" />
@@ -158,6 +161,27 @@
             android:drawablePadding="4dp"
             android:drawableStart="@drawable/drop_down"></TextView>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/free_coupon_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/drop_down" />
+
+    <TextView
+        android:id="@+id/tv_free_coupon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/product_title"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

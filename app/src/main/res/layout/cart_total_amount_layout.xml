@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:background="#d6d6d6"
     android:elevation="3dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -26,7 +27,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="PRICE DETAILS"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
 
             app:layout_constraintStart_toStartOf="parent"
@@ -144,16 +145,4 @@
             app:layout_constraintTop_toBottomOf="@+id/divider4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[10]" />
 </androidx.constraintlayout.widget.ConstraintLayout>
