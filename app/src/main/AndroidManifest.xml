@@ -13,14 +13,20 @@
         <activity android:name=".CategoryActivity" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="MY SHOP"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
+
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
 
         <activity android:name=".AdminAddNewProductActivity" />
@@ -33,11 +39,9 @@
         <activity
             android:name=".Main2Activity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
         </activity>
         <activity
             android:name=".MainActivity"

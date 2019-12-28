@@ -137,16 +137,21 @@ phone ="+91"+phone;
                                 Toast.makeText(LoginActivity.this, "welcome admin Logged in Successfully ...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                                 Intent intent = new Intent(LoginActivity.this, AdminAddNewProductActivity.class);
-                                startActivity(intent);
+
+
+
 
 
 
                             }
                             else if (parentDbname.equals("Users"))
                             {
-                                Toast.makeText(LoginActivity.this, "Logged in Successfully ...", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(LoginActivity.this, "Logged in Successfully ...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                intent.putExtra("x","correct");
+                                //intent.putExtra("y",password);
+                                startActivity(intent);
                                 startActivity(intent);
                             }
 
