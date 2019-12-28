@@ -47,8 +47,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private AppBarConfiguration mAppBarConfiguration;
     private FrameLayout frameLayout;
-    private static final int HOME_FREAGMENT=0;
-    private static final int CART_FREAGMENT=1;
+    private static final int HOME_FRAGMENT=0;
+    private static final int CART_FRAGMENT=1;
+
+    private static final int ACCOUNT_FRAGMENT=5;
     private  NavigationView navigationView;
     private ImageView actionBarLogo;
 
@@ -75,7 +77,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         actionBarLogo=findViewById(R.id.actionbar_logo);
         frameLayout=findViewById(R.id.main_framelayout);
-        setFragment(new HomeFragment(),HOME_FREAGMENT);
+        setFragment(new HomeFragment(),HOME_FRAGMENT);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(HomeActivity.this,drawer,toolbar,0,0);
         drawer.addDrawerListener(toggle);
@@ -106,7 +108,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        if(currentFragment==HOME_FREAGMENT) {
+        if(currentFragment==HOME_FRAGMENT) {
             getMenuInflater().inflate(R.menu.home, menu);
 
 
@@ -142,7 +144,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("MY CART");
         invalidateOptionsMenu();
-        setFragment(new MyCartFragment(),CART_FREAGMENT);
+        setFragment(new MyCartFragment(),CART_FRAGMENT);
         navigationView.getMenu().getItem(3).setChecked(true);
         navigationView.getMenu().getItem(0).setChecked(false);
     }
@@ -161,7 +163,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             actionBarLogo.setVisibility(View.VISIBLE);
             invalidateOptionsMenu();
-             setFragment(new HomeFragment(),HOME_FREAGMENT);
+             setFragment(new HomeFragment(),HOME_FRAGMENT);
             navigationView.getMenu().getItem(0).setChecked(true);
             navigationView.getMenu().getItem(3).setChecked(false);
         }
@@ -186,6 +188,7 @@ myCart();
         }
         else if(id==R.id.my_account)
         {
+            gotoFragment("My Account ",new MyAccountFragment(),ACCOUNT_FRAGMENT);
 
         }
         else if(id==R.id.my_signout)
@@ -213,6 +216,18 @@ myCart();
             fragmentTransaction.replace(frameLayout.getId(), fragment);
             fragmentTransaction.commit();
 
+    }
+    private void gotoFragment(String title ,Fragment fragment,int fragmentNO)
+    {
+        actionBarLogo.setVisibility(View.GONE);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(title);
+        invalidateOptionsMenu();
+        setFragment(fragment,fragmentNO);
+        if(fragmentNO==CART_FREAGMENT)
+        {
+            navigationView.getMenu().getItem(3).setChecked(true);
+        }
     }
 
 

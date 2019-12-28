@@ -44,6 +44,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'io.paperdb:paperdb:2.6'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 
 
     //implementation 'com.google.firebase:firebase-ads:18.3.0'
