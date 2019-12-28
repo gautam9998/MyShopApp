@@ -15,6 +15,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
             <include layout="@layout/profile_data_layout"></include>
+            <include layout="@layout/my_addresses_layout"></include>
+
+            <Button
+                android:id="@+id/sign_out_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+
+
+                android:backgroundTint="@color/colorPrimary"
+                android:text="SIGN OUT"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"></Button>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

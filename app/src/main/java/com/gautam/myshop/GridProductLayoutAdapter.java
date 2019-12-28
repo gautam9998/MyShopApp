@@ -1,5 +1,6 @@
 package com.gautam.myshop;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class GridProductLayoutAdapter extends BaseAdapter {
 
@@ -20,7 +24,7 @@ public class GridProductLayoutAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return horizontalProductScrollModelList.size();
     }
 
     @Override
@@ -55,5 +59,49 @@ public class GridProductLayoutAdapter extends BaseAdapter {
             view=convertView;
         }
         return view;
+    }
+
+
+
+
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private ImageView productImage;
+        private TextView productTitle;
+        private TextView productDescription;
+        private TextView productPrice;
+        public ViewHolder(@NonNull final View itemView) {
+            super(itemView);
+            productImage=itemView.findViewById(R.id.hs_product_image);
+            productTitle=itemView.findViewById(R.id.hs_product_title);
+            productDescription=itemView.findViewById(R.id.hs_product_description);
+            productPrice=itemView.findViewById(R.id.hs_product_price);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(itemView.getContext(),ProductDetailsActivity.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
+        }
+
+
+        private void setProductImage(int resource)
+        {
+            productImage.setImageResource(resource);
+        }
+        private void setProductTitle(String title)
+        {
+            productTitle.setText(title);
+        }
+        private void setProductDescription(String description)
+        {
+            productTitle.setText(description);
+        }
+        private void setProductPrice(String title)
+        {
+            productTitle.setText(title);
+        }
     }
 }

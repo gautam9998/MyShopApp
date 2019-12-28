@@ -9,26 +9,20 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity android:name=".ViewAllActivity"></activity>
+        <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".CategoryActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="MY SHOP"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
-
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
-
         <activity android:name=".AdminAddNewProductActivity" />
         <activity
             android:name=".LoginActivity"
@@ -38,17 +32,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Main2Activity"
-            android:screenOrientation="portrait">
-
-
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
-
-        </activity>
+            android:theme="@style/SplashTheme"></activity>
     </application>
 
 </manifest>

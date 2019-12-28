@@ -1,5 +1,6 @@
 package com.gautam.myshop;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -262,6 +263,14 @@ public class HomePageAdapter extends RecyclerView.Adapter {
             horizontalLayoutTitle.setText(title);
             if(horizontalProductScrollModelList.size()>8){
                 horizontalViewAll.setVisibility(View.VISIBLE);
+                horizontalViewAll.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(itemView.getContext(),ViewAllActivity.class);
+                        intent.putExtra("layout_code",0);
+                        itemView.getContext().startActivity(intent);
+                    }
+                });
             }
             else {
                 horizontalViewAll.setVisibility(View.INVISIBLE);
@@ -277,6 +286,11 @@ public class HomePageAdapter extends RecyclerView.Adapter {
 
         }
     }
+
+
+
+
+
     public class GridProdctViewHolder extends RecyclerView.ViewHolder{
 
         private   TextView gridLayoutTitle;
@@ -293,6 +307,17 @@ private Button gridLayoutViewallbutton;
         private void setGridProductLayout(List<horizontal_product_scroll_model>horizontalProductScrollModelList,String title){
             gridLayoutTitle.setText(title);
             gridView.setAdapter(new GridProductLayoutAdapter(horizontalProductScrollModelList));
+            gridLayoutViewallbutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    Intent intent=new Intent(itemView.getContext(),ViewAllActivity.class);
+                    intent.putExtra("layout_code",1);
+                    itemView.getContext().startActivity(intent);
+
+                }
+            });
 
         }
     }

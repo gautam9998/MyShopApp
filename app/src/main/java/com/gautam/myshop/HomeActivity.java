@@ -224,7 +224,7 @@ myCart();
         getSupportActionBar().setTitle(title);
         invalidateOptionsMenu();
         setFragment(fragment,fragmentNO);
-        if(fragmentNO==CART_FREAGMENT)
+        if(fragmentNO==CART_FRAGMENT)
         {
             navigationView.getMenu().getItem(3).setChecked(true);
         }
