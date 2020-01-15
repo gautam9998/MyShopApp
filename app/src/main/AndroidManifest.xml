@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminCategoryActivity"></activity>
+        <activity android:name=".adressactivity"></activity>
+        <activity android:name=".AdminCategoryActivity" />
         <activity android:name=".ViewAllActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".CategoryActivity" />
@@ -17,7 +18,7 @@
             android:name=".HomeActivity"
             android:label="MY SHOP"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdminAddNewProductActivity" />
         <activity
             android:name=".LoginActivity"
