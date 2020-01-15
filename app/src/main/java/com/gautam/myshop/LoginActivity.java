@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
         String phone =phoneNumber.getText().toString();
         String password =Password.getText().toString();
 
-phone ="+91"+phone;
+
         if(TextUtils.isEmpty(phone))
         {
             Toast.makeText(this,"PLEASE GIVE YOUR PHONE NUMBER ...",Toast.LENGTH_LONG).show();
@@ -94,6 +95,7 @@ phone ="+91"+phone;
         }
         else
         {
+            phone ="+91"+phone;
             loadingBar.setTitle("LOGIN ACCOUNT");
             loadingBar.setMessage("Please wait, while logging in your account ...");
             loadingBar.setCanceledOnTouchOutside(false);
@@ -123,7 +125,7 @@ phone ="+91"+phone;
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child(parentDbname).child(phone).exists())
                 {
-                    //Toast.makeText(LoginActivity.this, "1111111111", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "1111111111", Toast.LENGTH_SHORT).show();
 
                     Users usersData=dataSnapshot.child(parentDbname).child(phone).getValue(Users.class);
                     if(usersData.getPhone().equals(phone)) {
@@ -136,7 +138,8 @@ phone ="+91"+phone;
                             {
                                 Toast.makeText(LoginActivity.this, "welcome admin Logged in Successfully ...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent = new Intent(LoginActivity.this, AdminAddNewProductActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                startActivity(intent);
 
 
 

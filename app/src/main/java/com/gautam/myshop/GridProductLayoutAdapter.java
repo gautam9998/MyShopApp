@@ -66,42 +66,4 @@ public class GridProductLayoutAdapter extends BaseAdapter {
 
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView productImage;
-        private TextView productTitle;
-        private TextView productDescription;
-        private TextView productPrice;
-        public ViewHolder(@NonNull final View itemView) {
-            super(itemView);
-            productImage=itemView.findViewById(R.id.hs_product_image);
-            productTitle=itemView.findViewById(R.id.hs_product_title);
-            productDescription=itemView.findViewById(R.id.hs_product_description);
-            productPrice=itemView.findViewById(R.id.hs_product_price);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(itemView.getContext(),ProductDetailsActivity.class);
-                    itemView.getContext().startActivity(intent);
-                }
-            });
-        }
-
-
-        private void setProductImage(int resource)
-        {
-            productImage.setImageResource(resource);
-        }
-        private void setProductTitle(String title)
-        {
-            productTitle.setText(title);
-        }
-        private void setProductDescription(String description)
-        {
-            productTitle.setText(description);
-        }
-        private void setProductPrice(String title)
-        {
-            productTitle.setText(title);
-        }
-    }
 }
