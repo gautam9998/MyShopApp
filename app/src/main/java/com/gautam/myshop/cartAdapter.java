@@ -28,7 +28,7 @@ public class cartAdapter extends RecyclerView.Adapter {
           return cartItemModel.CART_ITEM;
       case 1:
           return cartItemModel.TOTAL_AMOUNT;
-          default:return -1;
+          default:return -1;// tset
   }
     }
 
