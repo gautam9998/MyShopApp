@@ -56,8 +56,8 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
 
 
-        createAccountButton=(Button)findViewById(R.id.register_btn);
-        verify=(Button)findViewById(R.id.verify_btn);
+        createAccountButton= findViewById(R.id.register_btn);
+        verify= findViewById(R.id.verify_btn);
         inputName=findViewById(R.id.user_name_input);
         inputPassword=findViewById(R.id.register_password_input);
         inputPhoneNumber=findViewById(R.id.register_phone_number_input);

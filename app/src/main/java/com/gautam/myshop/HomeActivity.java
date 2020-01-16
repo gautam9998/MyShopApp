@@ -48,7 +48,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private AppBarConfiguration mAppBarConfiguration;
     private FrameLayout frameLayout;
     private static final int HOME_FRAGMENT=0;
-    private static final int CART_FRAGMENT=1;
+    private static final int CART_FRAGMENT=3;
+
+    private static final int ORDERS_FRAGMENT=1;
 
     private static final int ACCOUNT_FRAGMENT=5;
     private  NavigationView navigationView;
@@ -150,6 +152,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+
+
+
+    private void myOrder() {
+        actionBarLogo.setVisibility(View.GONE);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("MY ORDER");
+        invalidateOptionsMenu();
+        setFragment(new myOrderFragment(),ORDERS_FRAGMENT);
+        navigationView.getMenu().getItem(1).setChecked(true);
+        navigationView.getMenu().getItem(0).setChecked(false);
+    }
+
+
+
+
     public boolean onNavigationItemSelected(MenuItem item)
     {
 
@@ -170,7 +188,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         else if(id==R.id.my_order)
         {
-
+        myOrder();
         }
 
        else if(id==R.id.my_rewards)
@@ -179,7 +197,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         else if(id==R.id.my_cart)
         {
-myCart();
+        myCart();
         }
 
         else if(id==R.id.my_whishlist)

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:id="@+id/rate_now_container"
+        android:layout_width="282dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/ImageView11"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:tint="#bebebe"
+        android:src="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/ImageView12"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:tint="#bebebe"
+        android:src="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/ImageView13"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:tint="#bebebe"
+        android:src="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/ImageView14"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:tint="#bebebe"
+        android:src="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/ImageView15"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:tint="#bebebe"
+        android:src="@drawable/star" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
