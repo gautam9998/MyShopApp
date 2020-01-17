@@ -49,6 +49,7 @@
         android:id="@+id/free_coupon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:text="free coupon"
         android:textColor="#8000FF"
         android:textSize="12sp"
@@ -150,7 +151,7 @@
         app:srcCompat="@drawable/delete" />
 
     <View
-        android:id="@+id/price_cut"
+        android:id="@+id/divider5"
         android:layout_width="0dp"
         android:layout_height="1dp"
 
