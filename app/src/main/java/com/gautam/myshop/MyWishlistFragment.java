@@ -24,6 +24,8 @@ public class MyWishlistFragment extends Fragment {
 
     public MyWishlistFragment() {
         // Required empty public constructor
+
+        //comment
     }
 
    private RecyclerView wishlistRecyclerView;
