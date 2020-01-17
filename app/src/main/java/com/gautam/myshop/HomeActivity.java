@@ -215,7 +215,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             Paper.book().destroy();
 
-
+//chnages
         }
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
