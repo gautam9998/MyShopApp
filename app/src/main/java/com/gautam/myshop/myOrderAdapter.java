@@ -3,6 +3,7 @@ package com.gautam.myshop;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,9 @@ public class myOrderAdapter extends RecyclerView.Adapter<myOrderAdapter.Viewhold
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        int resource = myOrderItemModelList.get(position).getProductImage();
+
+        int resource;
+        resource = myOrderItemModelList.get(position).getProductImage();
         int rating = myOrderItemModelList.get(position).getRating();
         String title = myOrderItemModelList.get(position).getProdictTitle();
         String deliverydate = myOrderItemModelList.get(position).getDeliveryStatus();
@@ -55,7 +58,7 @@ public class myOrderAdapter extends RecyclerView.Adapter<myOrderAdapter.Viewhold
 
         private LinearLayout rateNowContainer;
 
-        public Viewholder(@NonNull View itemView) {
+        public  Viewholder(@NonNull View itemView) {
             super(itemView);
 
             productImage = itemView.findViewById(R.id.product_image);
@@ -67,11 +70,12 @@ public class myOrderAdapter extends RecyclerView.Adapter<myOrderAdapter.Viewhold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent orderDetailsIntent = new Intent(itemView.getContext(),OrderDetailsActivity.class);
+                    Intent orderDetailsIntent = new Intent(itemView.getContext(),orderDetailsActivity.class);
                     itemView.getContext().startActivity(orderDetailsIntent);
                 }
             });
         }
+
 
 
         private void setData(int resource, String title, String deliverydate, int rating){
@@ -102,6 +106,7 @@ public class myOrderAdapter extends RecyclerView.Adapter<myOrderAdapter.Viewhold
 
 
         }
+
 
         private void setRating(int starPositon){
 

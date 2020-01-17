@@ -180,11 +180,10 @@
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:tint="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/order_packed_progress"
+        app:layout_constraintTop_toBottomOf="@+id/order_indicator"
         app:srcCompat="@android:drawable/ic_notification_overlay" />
 
     <ImageView
@@ -269,23 +268,25 @@
         android:id="@+id/ordered_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:text="Mon 12th Dec 2020 - 8:00 A.M."
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/order_status_constraint"
+        app:layout_constraintStart_toEndOf="@+id/order_status_constraint"
         app:layout_constraintTop_toTopOf="@+id/order_status_constraint"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="127dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/packed_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="Packed"
-        android:textSize="12sp"
         android:textColor="#000000"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/packed_indicator"
-        app:layout_constraintTop_toTopOf="@+id/packed_indicator"
-        tools:layout_editor_absoluteX="40dp" />
+        app:layout_constraintStart_toEndOf="@+id/packed_indicator"
+        app:layout_constraintTop_toTopOf="@+id/packed_indicator" />
 
     <TextView
         android:id="@+id/ordered_body"
