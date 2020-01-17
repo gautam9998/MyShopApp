@@ -52,7 +52,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
         private ImageView productImage;
         private TextView productTitle;
         private TextView freecoupons;
-        private TextView couponIcon;
+        private ImageView couponIcon;
         private TextView rating;
         private TextView totalRatings;
         private View priceCut;
@@ -60,7 +60,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
         private TextView productPrice;
         private TextView cuttedPrice;
         private TextView paymentMethod;
-        private ImageButton deletBtn;
+        private ImageView deletBtn;
 
 
         public ViewHolder(@NonNull View itemView) {
