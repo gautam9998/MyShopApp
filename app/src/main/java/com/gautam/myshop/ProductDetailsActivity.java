@@ -76,7 +76,7 @@ viewPagerIndicator.setupWithViewPager(productIMgesViewPager,true);
 
         productDetailsViewpager.setAdapter(new product_details_adapter(getSupportFragmentManager(),productDetailsTablayout.getTabCount()));
 
-        productDetailsViewpager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener) new TabLayout.TabLayoutOnPageChangeListener(productDetailsTablayout));
+        productDetailsViewpager.addOnPageChangeListener( new TabLayout.TabLayoutOnPageChangeListener(productDetailsTablayout));
 
         productDetailsTablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
