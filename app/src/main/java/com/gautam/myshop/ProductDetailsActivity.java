@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.gautam.myshop.ui.product_details_adapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,12 +31,23 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private FloatingActionButton addToWishListButton;
     private static boolean ALLREADY_ADDED_TO_WISHLIST=false;
 
-
+    //////rating layout
+    private LinearLayout rateNowLayoutContainer;
+    //////rating layout
     private Button buyNowBotton;
 
     // YE BUTTON HOTA HE YA BUTTTUNNN ????
 
 
+    private void setRating(int starposition){
+        for(int x = 0;x < rateNowLayoutContainer.getChildCount();x++){
+            ImageView startBtn = (ImageView) rateNowLayoutContainer.getChildAt(x);
+            startBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#bebebe")));
+            if(x <= starposition){
+                startBtn.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffbb00")));
+            }
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -121,6 +134,18 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             }
         });
+
+        ////rating layout
+        rateNowLayoutContainer = findViewById(R.id.rate_now_container);
+        for(int x = 0;x < rateNowLayoutContainer.getChildCount();x++){
+            final int starposition = x;
+            rateNowLayoutContainer.getChildAt(x).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setRating(starposition);
+                }
+            });
+        }
 
 
         buyNowBotton.setOnClickListener(new View.OnClickListener() {

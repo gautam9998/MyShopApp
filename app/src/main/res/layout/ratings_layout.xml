@@ -113,7 +113,7 @@
             android:layout_weight="1"
             android:max="100"
             android:progress="50"
-            android:progressTint="#F5FF06" />
+            android:progressTint="#FFD308" />
 
         <ProgressBar
             android:id="@+id/progressBar2"
