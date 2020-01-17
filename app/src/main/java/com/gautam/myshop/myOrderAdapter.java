@@ -1,5 +1,6 @@
 package com.gautam.myshop;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -63,6 +64,13 @@ public class myOrderAdapter extends RecyclerView.Adapter<myOrderAdapter.Viewhold
             deliveryStatus = itemView.findViewById(R.id.order_delivered_date);
 
             rateNowContainer = itemView.findViewById(R.id.rate_now_container);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent orderDetailsIntent = new Intent(itemView.getContext(),OrderDetailsActivity.class);
+                    itemView.getContext().startActivity(orderDetailsIntent);
+                }
+            });
         }
 
 
