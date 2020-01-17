@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.gautam.myshop.ui.product_details_adapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,33 +29,54 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private FloatingActionButton addToWishListButton;
     private static boolean ALLREADY_ADDED_TO_WISHLIST=false;
 
+
+    private Button buyNowBotton;
+
+    // YE BUTTON HOTA HE YA BUTTTUNNN ????
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_product_details);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+        buyNowBotton = findViewById(R.id.buy_now_btn);
+
+
         productIMgesViewPager=findViewById(R.id.product_images_viewpager);
         viewPagerIndicator=findViewById(R.id.viewpager_indicator);
+
         viewPagerIndicator.setupWithViewPager(productIMgesViewPager,true);
         productDetailsTablayout=findViewById(R.id.product_details);
+
         productDetailsViewpager=findViewById(R.id.product_details_viewpager);
 
-List<Integer> productImages= new ArrayList<>();
-productImages.add(R.drawable.shopping);
+        List<Integer> productImages= new ArrayList<>();
+        productImages.add(R.drawable.shopping);
 
         productImages.add(R.drawable.banner);
+
         productImages.add(R.drawable.my_wishlist);
+
         productImages.add(R.drawable.carts);
+
         productImages.add(R.drawable.my_account);
 
 
         ProductImagesAdapter productImagesAdapter =new ProductImagesAdapter(productImages);
+
         productIMgesViewPager.setAdapter(productImagesAdapter);
-viewPagerIndicator.setupWithViewPager(productIMgesViewPager,true);
+
+        viewPagerIndicator.setupWithViewPager(productIMgesViewPager,true);
 
 
         addToWishListButton=findViewById(R.id.add_to_wishlist_button);
@@ -61,13 +84,17 @@ viewPagerIndicator.setupWithViewPager(productIMgesViewPager,true);
         addToWishListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(ALLREADY_ADDED_TO_WISHLIST)
                 {
                     ALLREADY_ADDED_TO_WISHLIST=false;
+
                     addToWishListButton.setSupportBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
                 }
                 else {
+
                     ALLREADY_ADDED_TO_WISHLIST=true;
+
                     addToWishListButton.setSupportBackgroundTintList(getResources().getColorStateList(R.color.colorAccents));
 
                 }
@@ -95,7 +122,19 @@ viewPagerIndicator.setupWithViewPager(productIMgesViewPager,true);
             }
         });
 
+
+        buyNowBotton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent deliveryIntent = new Intent(ProductDetailsActivity.this, deliveryActivity.class);
+            }
+        });
+
+
     }
+
+
+    // AGAR ISWAR PE SRADHHA RAKHTE TO TURANT LAPTOP SHUTDOWN KERKE SO JAO !!!
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

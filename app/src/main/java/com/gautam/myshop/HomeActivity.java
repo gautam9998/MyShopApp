@@ -53,11 +53,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        actionBarLogo=findViewById(R.id.actionbar_logo);
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        actionBarLogo=findViewById(R.id.actionbar_logo);
+
         frameLayout=findViewById(R.id.main_framelayout);
         setFragment(new HomeFragment(),HOME_FRAGMENT);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
