@@ -104,7 +104,7 @@
             android:progressTint="@color/successGreen" />
 
         <ProgressBar
-            android:id="@+id/progressBar3"
+            android:id="@+id/ship_delivered_progress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
             android:progressTint="#FFD308" />
 
         <ProgressBar
-            android:id="@+id/progressBar2"
+            android:id="@+id/pack_progress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
             android:progressTint="#FFD308" />
 
         <ProgressBar
-            android:id="@+id/progressBar1"
+            android:id="@+id/pack_progress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
