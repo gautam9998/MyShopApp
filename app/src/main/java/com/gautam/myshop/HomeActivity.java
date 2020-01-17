@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private FrameLayout frameLayout;
     private static final int HOME_FRAGMENT=0;
     private static final int CART_FRAGMENT=3;
-
+    private static final int WISHLIST_FRAGMENT=3;
     private static final int ORDERS_FRAGMENT=1;
 
     private static final int ACCOUNT_FRAGMENT=5;
@@ -85,6 +85,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         //NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         // NavigationUI.setupWithNavController(navigationView, navController);
+    }
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            if (currentFragment == HOME_FRAGMENT) {
+                super.onBackPressed();
+            } else {
+                //getSupportActionBar().setDisplayShowTitleEnabled(false);
+                actionBarLogo.setVisibility(View.VISIBLE);
+                invalidateOptionsMenu();
+                setFragment(new HomeFragment(),HOME_FRAGMENT);
+                navigationView.getMenu().getItem(0).setChecked(true);
+                //navigationView.getMenu().getItem(0).setChecked(true);
+                //navigationView.getMenu().getItem(3).setChecked(false);
+            }
+        }
     }
 
     @Override
@@ -182,7 +201,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         else if(id==R.id.my_whishlist)
         {
-
+             gotoFragment("My Wishlist",new MyWishlistFragment(),WISHLIST_FRAGMENT);
         }
         else if(id==R.id.my_account)
         {
