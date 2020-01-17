@@ -9,15 +9,16 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminCategoryActivity"></activity>
-        <activity android:name=".ViewAllActivity" />
-        <activity android:name=".ProductDetailsActivity" />
-        <activity android:name=".CategoryActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="MY SHOP"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".orderDetailsActivity" />
+        <activity android:name=".AdminCategoryActivity" />
+        <activity android:name=".ViewAllActivity" />
+        <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".CategoryActivity" />
         <activity android:name=".AdminAddNewProductActivity" />
         <activity
             android:name=".LoginActivity"

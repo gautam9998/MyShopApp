@@ -1,47 +1,27 @@
 package com.gautam.myshop;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.ui.AppBarConfiguration;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
-//import com.google.android.gms.ads.AdView;
-import com.gautam.myshop.Model.Users;
-import com.gautam.myshop.Prevalent.Prevalent;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.os.SystemClock;
-import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.view.GravityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import io.paperdb.Paper;
-
-import android.view.Menu;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
+
+import io.paperdb.Paper;
+
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -85,26 +65,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-         navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(HomeActivity.this);
         //navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
         navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.getMenu().getItem(3).setChecked(false);
 
 
-       // AdView adView=new AdView(this);
+        // AdView adView=new AdView(this);
 
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-      //  mAppBarConfiguration = new AppBarConfiguration.Builder(
-            //    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-              //  R.id.nav_tools, R.id.nav_share, R.id.nav_send)
-            //    .setDrawerLayout(drawer)
-              //  .build();
+        //  mAppBarConfiguration = new AppBarConfiguration.Builder(
+        //    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+        //  R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+        //    .setDrawerLayout(drawer)
+        //  .build();
         //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         //NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-       // NavigationUI.setupWithNavController(navigationView, navController);
+        // NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
@@ -129,7 +109,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         else if(id==R.id.main_notification_icon)
         {
-        return true;
+            return true;
         }
 
         else if(id==R.id.main_cart_icon)
@@ -138,7 +118,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
 
-            return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     private void myCart() {
@@ -181,23 +161,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             actionBarLogo.setVisibility(View.VISIBLE);
             invalidateOptionsMenu();
-             setFragment(new HomeFragment(),HOME_FRAGMENT);
+            setFragment(new HomeFragment(),HOME_FRAGMENT);
             navigationView.getMenu().getItem(0).setChecked(true);
             navigationView.getMenu().getItem(3).setChecked(false);
         }
 
         else if(id==R.id.my_order)
         {
-        myOrder();
+            myOrder();
         }
 
-       else if(id==R.id.my_rewards)
+        else if(id==R.id.my_rewards)
         {
 
         }
         else if(id==R.id.my_cart)
         {
-        myCart();
+            myCart();
         }
 
         else if(id==R.id.my_whishlist)
@@ -223,16 +203,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
 
     }
-    private void setFragment(Fragment fragment,int fragmentNo)
+    private void setFragment(Fragment fragment, int fragmentNo)
 
 
     {
 
-            currentFragment = fragmentNo;
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-            fragmentTransaction.replace(frameLayout.getId(), fragment);
-            fragmentTransaction.commit();
+        currentFragment = fragmentNo;
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+        fragmentTransaction.replace(frameLayout.getId(), fragment);
+        fragmentTransaction.commit();
 
     }
     private void gotoFragment(String title ,Fragment fragment,int fragmentNO)
