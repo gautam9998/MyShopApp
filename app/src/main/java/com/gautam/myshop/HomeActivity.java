@@ -11,10 +11,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -31,13 +34,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static final int CART_FRAGMENT=3;
     private static final int WISHLIST_FRAGMENT=3;
     private static final int ORDERS_FRAGMENT=1;
+    private static final int REWARDS_FRAGMENT=4;
 
     private static final int ACCOUNT_FRAGMENT=5;
     private  NavigationView navigationView;
     private ImageView actionBarLogo;
-
+   private Toolbar toolbar;
 
     private static int currentFragment;
+    private Window window;
 
 
 
@@ -53,8 +58,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        window= getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         actionBarLogo=findViewById(R.id.actionbar_logo);
@@ -192,7 +200,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         else if(id==R.id.my_rewards)
         {
-
+             gotoFragment("My Rewards ",new MyRewardsFragment(),REWARDS_FRAGMENT);
         }
         else if(id==R.id.my_cart)
         {
@@ -215,7 +223,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             Paper.book().destroy();
 
-//chnages
+
         }
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -223,15 +231,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     }
     private void setFragment(Fragment fragment, int fragmentNo)
-
-
     {
+        if(fragmentNo !=currentFragment) {
+            if(fragmentNo== REWARDS_FRAGMENT){
+                window.setStatusBarColor(Color.parseColor("#52B04B1"));
+                toolbar.setBackgroundColor(Color.parseColor("#52B04B1"));
 
-        currentFragment = fragmentNo;
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-        fragmentTransaction.replace(frameLayout.getId(), fragment);
-        fragmentTransaction.commit();
+            }else{
+                window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+                toolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            }
+            currentFragment = fragmentNo;
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+            fragmentTransaction.replace(frameLayout.getId(), fragment);
+            fragmentTransaction.commit();
+        }
 
     }
     private void gotoFragment(String title ,Fragment fragment,int fragmentNO)
