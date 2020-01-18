@@ -3,12 +3,12 @@ package com.gautam.myshop;
 public class RewardModel {
     private String title;
     private String expiryDate;
-    private String cooupenBody;
+    private String coupenBody;
 
     public RewardModel(String title, String expiryDate, String cooupenBody) {
         this.title = title;
         this.expiryDate = expiryDate;
-        this.cooupenBody = cooupenBody;
+        this.coupenBody = cooupenBody;
     }
 
     public String getTitle() {
@@ -28,11 +28,11 @@ public class RewardModel {
     }
 
     public String getCooupenBody() {
-        return cooupenBody;
+        return coupenBody;
     }
 
     public void setCooupenBody(String cooupenBody) {
-        this.cooupenBody = cooupenBody;
+        this.coupenBody = cooupenBody;
     }
 
 }
