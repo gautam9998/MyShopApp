@@ -5,10 +5,10 @@ public class RewardModel {
     private String expiryDate;
     private String coupenBody;
 
-    public RewardModel(String title, String expiryDate, String cooupenBody) {
+    public RewardModel(String title, String expiryDate, String coupenBody) {
         this.title = title;
         this.expiryDate = expiryDate;
-        this.coupenBody = cooupenBody;
+        this.coupenBody = coupenBody;
     }
 
     public String getTitle() {
@@ -31,8 +31,8 @@ public class RewardModel {
         return coupenBody;
     }
 
-    public void setCooupenBody(String cooupenBody) {
-        this.coupenBody = cooupenBody;
+    public void setCoupenBody(String coupenBody) {
+        this.coupenBody = coupenBody;
     }
 
 }
