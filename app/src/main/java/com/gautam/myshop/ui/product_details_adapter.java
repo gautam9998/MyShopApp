@@ -19,9 +19,6 @@ public class product_details_adapter extends FragmentPagerAdapter {
                 productDescriptionFragment productDescriptionFragment1 = new productDescriptionFragment();
                 return productDescriptionFragment1;
             case 1:
-                ProductSpecificationFragment productSpecificationFragment = new ProductSpecificationFragment();
-                return productSpecificationFragment;
-            case 2:
                 productDescriptionFragment productDescriptionFragment2 = new productDescriptionFragment();
                 return productDescriptionFragment2;
             default:

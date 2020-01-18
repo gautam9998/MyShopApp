@@ -7,4 +7,5 @@
     <color name="successGreen">#11A10C</color>
     <color name="colorAccents">#ff0000</color>
     <color name="RecyclerViewBackground">#d6d6d6</color>
+    <color name="slider_backgroung">#EEEDE9</color>
 </resources>

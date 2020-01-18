@@ -44,7 +44,7 @@
             <include layout="@layout/product_images_layout"></include>
             <include layout="@layout/reward_layout"></include>
             <include layout="@layout/description_layout"></include>
-            <include layout="@layout/ratings_layout"></include>
+            <include layout="@layout/ratings_layout">  </include>
 
         </LinearLayout>
 
