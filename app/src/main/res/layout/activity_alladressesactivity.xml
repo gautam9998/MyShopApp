@@ -59,7 +59,7 @@
             android:padding="16dp"
             android:text="add a new address"
             android:textColor="@color/colorPrimary"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">+</TextView>
 
     </LinearLayout>
 

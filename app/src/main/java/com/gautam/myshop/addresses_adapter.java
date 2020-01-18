@@ -1,9 +1,9 @@
+package com.gautam.myshop;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.gautam.myshop.R;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class addresses_adapter extends RecyclerView.Adapter<addresses_adapter.Viewholder>{
-    private List<com.gautam.myshop.addresses_model>  addresses_modelList;
-    public addresses_adapter(@NonNull List<com.gautam.myshop.addresses_model> addresses_modelList) {
+    private List<addresses_model>  addresses_modelList;
+    public addresses_adapter(@NonNull List<addresses_model> addresses_modelList) {
         this.addresses_modelList = addresses_modelList;
     }
 
@@ -20,20 +20,25 @@ public class addresses_adapter extends RecyclerView.Adapter<addresses_adapter.Vi
     @Override
 
     public addresses_adapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.addresses_item_layout2,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.addresses_item_layout,parent,false);
          return new Viewholder(view);
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull addresses_adapter.Viewholder holder, int position) {
+        String name=addresses_modelList.get(position).getFullname();
+        String addresses=addresses_modelList.get(position).getAddresses();
+        String pincode=addresses_modelList.get(position).getPincode();
+        holder.setdata(name,addresses,pincode);
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return addresses_modelList.size();
     }
     public class Viewholder extends RecyclerView.ViewHolder{
         private TextView fullname;
